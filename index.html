@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myFirstApp">
     <head>
         <meta charset="utf-8">
         <script src="angular.min.js"></script>
@@ -7,6 +7,10 @@
         <title>Eduard Faus Coursera Project</title>
     </head>
     <body>
-        <h1>This is amazin</h1>
+        <h1>My First Angular App</h1>
+        <div ng-controller="MyFirstController">
+            <input type="text" ng-model="name">
+            Inside my input is: {{name}}
+        </div>
     </body>
 </html>
