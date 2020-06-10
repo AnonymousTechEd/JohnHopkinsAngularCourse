@@ -6,18 +6,20 @@
         .controller("CheckIfToMuch", [
             "$scope",
             function ($scope) {
-                $scope.name = "";
-                $scope.totalValue = 0;
-                $scope.displayNumeric = function () {
-                    var totalNameValue = calculateNumericString($scope.name)
-                    $scope.totalValue = totalNameValue
-                }
-                function calculateNumericString(string) {
-                    var totalStringValue = 0
-                    for (var i = 0; i < string.length; i++) {
-                        totalStringValue += string.charCodeAt(i)
+                $scope.inputvalue = "";
+                $scope.isItToMuch = "";
+                $scope.findIfItsToMuch = function () {
+                    $scope.arrayOfStrings = $scope.inputvalue.split(",")
+                    $scope.numberOfItems = $scope.arrayOfStrings.length
+                    if($scope.inputvalue == "") {
+                        $scope.isItToMuch = "Please enter data first";
+                    } else {
+                        if($scope.numberOfItems <= 3) {
+                            $scope.isItToMuch = "Enjoy";
+                        } else {
+                            $scope.isItToMuch = "Too much!";
+                        }
                     }
-                    return totalStringValue
                 }
             }
         ]);

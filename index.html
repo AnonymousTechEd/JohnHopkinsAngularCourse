@@ -7,13 +7,11 @@
         <title>Eduard Faus Coursera Project</title>
     </head>
     <body>
-        <h1>Name Calculator</h1>
+        <h1>Check If to Much</h1>
         <div ng-controller="CheckIfToMuch">
-            <div> Your name: <input type="text" 
-                ng-model="name"
-                ng-keyup="displayNumeric()"
-            > </div>
-            Total Numeric value of person's name is: {{totalValue}}
+            <button ng-click="findIfItsToMuch()">Check If Too Much</button>
+            <div> Is this to much ->  <input type="text" ng-model="inputvalue"> </div>
+            {{isItToMuch}}
         </div>
     </body>
 </html>
